@@ -1,5 +1,5 @@
 # Jupyter Notebook on Ucalgary ARC server
-This instruction will guide you through how to develop Jupyter Notebook on ARC and access it from local machine.
+This instruction will guide you through how to deploy Jupyter Notebook on ARC and access it from local machine.
 
 ## Abstract
 Ucalgary ARC server provides powerful computational hardware to handle Machine Learning tasks. 
@@ -53,12 +53,12 @@ Please use -L ssh option to link fg8:8888 to your local computer
 ****
 
 
-[I 22:37:10.202 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
-[W 22:37:10.643 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
-[I 22:37:10.645 NotebookApp] Serving notebooks from local directory: /home/zhanfei.peng
-[I 22:37:10.645 NotebookApp] Jupyter Notebook 6.4.11 is running at:
-[I 22:37:10.645 NotebookApp] http://fg8:8888/
-[I 22:37:10.645 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 12:37:10.202 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 12:37:10.643 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 12:37:10.645 NotebookApp] Serving notebooks from local directory: /home/zhanfei.peng
+[I 12:37:10.645 NotebookApp] Jupyter Notebook 6.4.11 is running at:
+[I 12:37:10.645 NotebookApp] http://fg8:8888/
+[I 12:37:10.645 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
 This suggests the Jupyter Notebook has been turned on and held on the **8888** port of the **fg8** node.
@@ -92,8 +92,17 @@ If you followed the steps, you should now be able to access [localhost:8888/](ht
 After Step3, configuration on the ARC server side is done. Therefore you can use any other devices to go through Step4 & Step5 to get access to the Jupyter Notebook on ARC.
 
 ## Customize your setting
+Please look into [JupyterOnARC.slurm](./JupyterOnARC.slurm) file and make your own change. 
 
+You may change computing resources you wish to reserve, or add more environmental set up before starting the Jupyter Notebook. 
 
+You should keep in mind that the Jupyter Notebook server only servive within your reserve time.
+
+## Useful tool
+`jupyter nbconvert --to script notebook.ipynb` is a useful command line tool to convert your Jupyter Notebook to Python script. 
+It will be useful if you wish to run your code in a non-interactive way.
+
+Don't forget to comment interactive blocks before converting.
 
 ## References
 - [ARC Cluster Guide](https://rcs.ucalgary.ca/ARC_Cluster_Guide)
