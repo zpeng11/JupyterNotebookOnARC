@@ -86,7 +86,7 @@ zhanfei.peng@arc.ucalgary.ca's password:
 It asks the SSH tool to link **fg8:8888** to **localhost:8888** so that all access to  **localhost:8888** on your local machine will be redirected to **fg8:8888** on ARC.
 
 #### Step5
-If you followed the steps, you should now be able to access [localhost:8888/](http://localhost:8888/) from your browser and start working with Jupyter Notebook.
+If following the steps, you should now be able to access [localhost:8888](http://localhost:8888/) from your browser and start working with Jupyter Notebook.
 
 #### More Access Device
 After Step3, configuration on the ARC server side is done. Therefore you can use any other devices to go through Step4 & Step5 to get access to the Jupyter Notebook on ARC.
@@ -95,9 +95,9 @@ After Step3, configuration on the ARC server side is done. Therefore you can use
 Please look into [JupyterOnARC.slurm](./JupyterOnARC.slurm) file and make your own change. 
 
 You may change computing resources you wish to reserve, or add more environmental set up before starting the Jupyter Notebook. 
+You should keep in mind that the Jupyter Notebook server only servives within your reserve time.
 
-You should keep in mind that the Jupyter Notebook server only servive within your reserve time.
-
+If having safety concern, you can change the `NotebookApp.token` and `NotebookApp.password` startup options in the Jupter Notebook.
 ## Useful tool
 `jupyter nbconvert --to script notebook.ipynb` is a useful command line tool to convert your Jupyter Notebook to Python script. 
 It will be useful if you wish to run your code in a non-interactive way.
