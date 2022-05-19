@@ -13,13 +13,15 @@ With Jupyter Notebook deployed on ARC, users can interactively develop code and 
 This way better protects safety of data and code and saves time for configuring Machine Learning environment on local machine. 
 
 ## Prerequisites
-+ General knowledge to basic Ucalgary ARC operation and Linux commands.
-+ General knowledge to Jupyter Notebook.
++ General knowledge to the Ucalgary ARC commands.
++ General knowledge to the Jupyter Notebook.
 + An ARC account that has completed all necessary environment setup and has Jupyter Notebook installed.
 ## Setup
+#### Step1
 Download [JupyterOnARC.slurm](./JupyterOnARC.slurm) to your ARC server, or create a `.slurm` batch script on your ARC then copy-paste contents.
 
-Login to your ARC through ssh.(if your are outside campus don't forget VPN) Find the location where you put the slurm script.
+#### Step2
+Login to your ARC through SSH.(if your are outside campus don't forget VPN) Find the location where you put the slurm script.
 ```
 C:\>ssh zhanfei.peng@arc.ucalgary.ca
 zhanfei.peng@arc.ucalgary.ca's password:
@@ -34,7 +36,7 @@ zhanfei.peng@arc.ucalgary.ca's password:
 (MSResearch) [zhanfei.peng@arc ~]$ ls
 JupyterOnARC.slurm
 ```
-
+#### Step3
 Submit the slurm script and get job id.
 ```
 (MSResearch) [zhanfei.peng@arc ~]$ sbatch JupyterOnARC.slurm
@@ -60,7 +62,9 @@ Please use -L ssh option to link fg8:8888 to your local computer
 ```
 
 This suggests the Jupyter Notebook has been turned on and held on the **8888** port of the **fg8** node.
-We will then logout current session, and use ssh tool again to link **fg8:8888** port to our local machine.
+We will then logout current session, and use SSH tool again to link **fg8:8888** port to our local machine.
+
+#### Step4
 ```
 (MSResearch) [zhanfei.peng@arc ~]$ exit
 logout
@@ -78,9 +82,18 @@ zhanfei.peng@arc.ucalgary.ca's password:
                                     arc
 ```
 
-`-L localhost:8888:fg8:8888` is the command added compare to the first ssh login. 
-It asks the ssh tool to link **fg8:8888** to **localhost:8888** so that all access to  **localhost:8888** on your local machine will be redirected to **fg8:8888** on ARC.
+`-L localhost:8888:fg8:8888` is the command added compare to the first SSH login. 
+It asks the SSH tool to link **fg8:8888** to **localhost:8888** so that all access to  **localhost:8888** on your local machine will be redirected to **fg8:8888** on ARC.
+
+#### Step5
+If you followed the steps, you should now be able to access [localhost:8888/](http://localhost:8888/) from your browser and start working with Jupyter Notebook.
+
+#### More Access Device
+After Step3, configuration on the ARC server side is done. Therefore you can use any other devices to go through Step4 & Step5 to get access to the Jupyter Notebook on ARC.
+
 ## Customize your setting
+
+
 
 ## References
 - [ARC Cluster Guide](https://rcs.ucalgary.ca/ARC_Cluster_Guide)
