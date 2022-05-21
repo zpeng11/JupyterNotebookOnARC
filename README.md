@@ -37,13 +37,13 @@ zhanfei.peng@arc.ucalgary.ca's password:
 JupyterOnARC.slurm
 ```
 #### Step3
-Submit the slurm script and get job id.
+Submit the slurm script and get job id. You may need to wait for the Cluster for resource acquire.
 ```
 (MSResearch) [zhanfei.peng@arc ~]$ sbatch JupyterOnARC.slurm
 Submitted batch job 13948200
 ```
 
-Look into output file of the job, should be at the same location as the slurm script.
+Look into output file of the job, should be at the same location as the slurm script after our task got resource.
 ```
 (MSResearch) [zhanfei.peng@arc ~]$ cat slurm-13948200.out
 
