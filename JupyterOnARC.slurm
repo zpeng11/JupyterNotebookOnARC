@@ -1,9 +1,11 @@
 #!/bin/bash
 ####### Reserve computing resources #############
-#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --time=05:00:00
 #SBATCH --mem=0
-#SBATCH --partition=gpu-v100
-#SBATCH --gres=gpu:1
+#SBATCH --partition=single
 
 ####### Set environment variables ###############
 echo -e '\n\n****\nPlease use -L ssh option to link '${SLURMD_NODENAME}':8888 to your local computer\n****\n\n'
