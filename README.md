@@ -105,9 +105,9 @@ If having safety concern, you can change the `NotebookApp.token` and `NotebookAp
 
 ## End Jupyter Notebook Process
 If you have finished your work with Jupyter Notebook before reserved time, but wish to return computation resource to ARC.
-You can copy-paste following magic command in Junpyter Notebook:
+You can copy-paste following magic command in Junpyter Notebook coding block:
 
-**Warning! This will turn off Jupyter Notebook immediately! Save your work before running it**
+**Warning! This will turn off Jupyter Notebook immediately! Save your work before running it!**
 
 ```
 !!ps aux | grep -i jupyter-notebook | echo $(read s;echo ${s[0]}) | tr '\n' ' ' | sed -e 's/[^0-9]/ /g' -e 's/^ *//g' -e 's/ *$//g' | tr -s ' ' | sed 's/ /\n/g'| kill $(read s;echo ${s[0]}) 
