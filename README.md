@@ -102,6 +102,16 @@ You should keep in mind that the Jupyter Notebook server only servives within yo
 
 If having safety concern, you can change the `NotebookApp.token` and `NotebookApp.password` startup options for Jupter Notebook.
 (Normally you don't need to care about)
+
+## End Jupyter Notebook Process
+If you have finished your work with Jupyter Notebook before reserved time, but wish to return computation resource to ARC.
+You can copy-paste following magic command in Junpyter Notebook:
+
+**Warning! This will turn off Jupyter Notebook immediately! Save your work before running it**
+
+```
+!!ps aux | grep -i jupyter-notebook | echo $(read s;echo ${s[0]}) | tr '\n' ' ' | sed -e 's/[^0-9]/ /g' -e 's/^ *//g' -e 's/ *$//g' | tr -s ' ' | sed 's/ /\n/g'| kill $(read s;echo ${s[0]}) 
+```
 ## Useful tool
 `jupyter nbconvert --to script notebook.ipynb` is a useful command line tool to convert your Jupyter Notebook to Python script. 
 It will be useful if you wish to run your code in a non-interactive way.
