@@ -97,6 +97,8 @@ You can also read the slurm output file to confirm if the Jupyter Notebook progr
 ## Customize your setting
 Please look into [JupyterOnARC.slurm](./JupyterOnARC.slurm) file and make your own change. 
 
+Due to some unknown bug, the activation of Anaconda Environment would not work here, please activate Anconda Environment in the ~/.bashrc file if you want to specify one.
+
 You may change computing resources you wish to reserve, or add more environmental set up before starting the Jupyter Notebook. 
 You should keep in mind that the Jupyter Notebook server only servives within your reserve time.
 
